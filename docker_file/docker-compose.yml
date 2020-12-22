@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+
+  #Postgres Database
+  postgres:
+    container_name: "postgres"
+    image: postgres:10.13
+    restart: on-failure
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "auto_shop"
+      POSTGRES_PASSWORD: "QWaszx12"
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - "6432:5432"
